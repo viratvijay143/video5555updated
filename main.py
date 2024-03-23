@@ -28,18 +28,18 @@ bot = Client("bot",
              api_hash= "1740e4541ec18b9cdd3e5ff6f3687d46")
 
 
-@bot.on_message(filters.command(["start"])
+@bot.on_message(filters.command(["start"]) & filters.user(ADMINS))
 async def account_login(bot: Client, m: Message):
     editable = await m.reply_text(f"HELLO I AM TXT DOWNLOADER BOT MADE BY PARADISE [{m.from_user.first_name}](tg://user?id={m.from_user.id})\nPress /Paradise")
 
 
-@bot.on_message(filters.command("stop")
+@bot.on_message(filters.command("stop") & filters.user(ADMINS))
 async def restart_handler(_, m):
     await m.reply_text("**STOPPED**🛑🛑", True)
     os.execl(sys.executable, sys.executable, *sys.argv)
 
 
-@bot.on_message(filters.command(["Paradise"])
+@bot.on_message(filters.command(["Paradise"]) & filters.user(ADMINS))
 async def account_login(bot: Client, m: Message):
     editable = await m.reply_text(f"**Hey [{m.from_user.first_name}](tg://user?id={m.from_user.id})\nSend txt file**")
     input: Message = await bot.listen(editable.chat.id)
