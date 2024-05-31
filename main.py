@@ -23,7 +23,7 @@ import re
 import os
 
 bot = Client("bot",
-             bot_token= "6458458851:AAHtCGYLSKGKnqensjvvkqT8K-ET2YlH9Q4",
+             bot_token= "7411835985:AAFwinmwg-WSw7C5SJC6qN81U0TV2bLT5B8",
              api_id=23455230,
              api_hash= "1740e4541ec18b9cdd3e5ff6f3687d46")
 
@@ -181,8 +181,8 @@ async def account_login(bot: Client, m: Message):
                 cmd = f'yt-dlp -f "{ytf}" "{url}" -o "{name}.mp4"'
 
             try:                               
-                cc = f'[ 🎬 ] Vid ID : {str(count).zfill(3)}\n\n**Video Title : {name1}({res}) PARADISE.mp4\n\n**Batch Name : {b_name}\n\n**Extracted By ➤** {CR}'
-                cc1 = f'[ 📕 ] Pdf ID : {str(count).zfill(3)}\n\n**File Title : {name1} PARADISE.pdf\n\n**Batch Name :{b_name}\n\n**Extracted By ➤** {CR}'
+                cc = f'[ 🎬 ] Vid ID : {str(count).zfill(3)}\n\n**Video Title : {name1}({res}) @HEY_PARADISE.mp4\n\n**Batch Name : {b_name}\n\n**Extracted By ➤** {CR}'
+                cc1 = f'[ 📕 ] Pdf ID : {str(count).zfill(3)}\n\n**File Title : {name1} @HEY_PARADISE.pdf\n\n**Batch Name :{b_name}\n\n**Extracted By ➤** {CR}'
                 if "drive" in url:
                     try:
                         ka = await helper.download(url, name)
