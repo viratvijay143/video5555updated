@@ -23,6 +23,23 @@ import os
 from logging.handlers import RotatingFileHandler
 import logging
 
+
+logging.basicConfig(
+    level=logging.DEBUG,
+    format=
+    "%(asctime)s - %(levelname)s - %(message)s [%(filename)s:%(lineno)d]",
+    datefmt="%d-%b-%y %H:%M:%S",
+    handlers=[
+        RotatingFileHandler("Assist.txt", maxBytes=50000000, backupCount=10),
+        logging.StreamHandler(),
+    ],
+)
+logging.getLogger("pyrogram").setLevel(logging.WARNING)
+
+
+logging = logging.getLogger()
+
+
 bot = Client("bot",
              bot_token= "7261086621:AAFTjL9QjILoXUxHvhyrIeHJmdDUPP1boqw",
              api_id=23455230,
