@@ -1,3 +1,4 @@
+from pyrogram.errors.exceptions.bad_request_400 import StickerEmojiInvalid
 import requests
 import json
 import subprocess
@@ -16,10 +17,11 @@ from logger import logging
 import time
 import asyncio
 from pyrogram.types import User, Message
-from config import *
 import sys
 import re
 import os
+from logging.handlers import RotatingFileHandler
+import logging
 
 bot = Client("bot",
              bot_token= "7261086621:AAFTjL9QjILoXUxHvhyrIeHJmdDUPP1boqw",
