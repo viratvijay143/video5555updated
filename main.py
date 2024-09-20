@@ -1,43 +1,32 @@
-from pyrogram.errors.exceptions.bad_request_400 import StickerEmojiInvalid
 import requests
 import json
 import subprocess
-from pyrogram import Client, filters
+from pyrogram import Client,filters
 from pyrogram.types.messages_and_media import message
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from pyrogram.errors import FloodWait
 from pyromod import listen
 from pyrogram.types import Message
+import pyrogram
 from pyrogram import Client, filters
+import tgcrypto
 from p_bar import progress_bar
+# from details import api_id, api_hash, bot_token
 from subprocess import getstatusoutput
-from aiohttp import ClientSession
 import helper
-from logger import logging
+import logging
 import time
+import aiohttp
 import asyncio
+import aiofiles
 from pyrogram.types import User, Message
+# import progressor 
+# from progressor import progress_for_pyrogram
 import sys
 import re
 import os
-from logging.handlers import RotatingFileHandler
-import logging
-
-
-logging.basicConfig(
-    level=logging.DEBUG,
-    format=
-    "%(asctime)s - %(levelname)s - %(message)s [%(filename)s:%(lineno)d]",
-    datefmt="%d-%b-%y %H:%M:%S",
-    handlers=[
-        RotatingFileHandler("Assist.txt", maxBytes=50000000, backupCount=10),
-        logging.StreamHandler(),
-    ],
-)
-logging.getLogger("pyrogram").setLevel(logging.WARNING)
-
-
-logging = logging.getLogger()
+from os import environ
+# import pycurl
 
 
 bot = Client("bot",
