@@ -13,3 +13,4 @@ cryptg
 telethon
 python-decouple
 yt-dlp==2024.04.09
+requests
